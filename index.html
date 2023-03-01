@@ -411,22 +411,24 @@
           </ul>
         </div>
         <div>
-          <b class="footer-soc-title">Subscribe</b>
-          <div class="footer-input-wraper">
-            <input
-              type="email"
-              name="user-email"
-              class="footer-input"
-              id="user-email"
-              placeholder="E-mail"
-            />
-            <button type="submit" class="footer-btn">
-              Subscribe
-              <svg class="icon-footer-btn" width="24" height="24">
-                <use href="./images/icons.svg#icon-send-icon"></use>
-              </svg>
-            </button>
-          </div>
+          <form>
+            <label for="footer-email" class="footer-soc-title">Subscribe</label>
+            <div class="footer-input-wraper">
+              <input
+                type="email"
+                name="footer-email"
+                class="footer-input"
+                id="footer-email"
+                placeholder="E-mail"
+              />
+              <button type="submit" class="footer-btn">
+                Subscribe
+                <svg class="icon-footer-btn" width="24" height="24">
+                  <use href="./images/icons.svg#icon-send-icon"></use>
+                </svg>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </footer>
@@ -481,7 +483,7 @@
               </svg>
             </div>
           </div>
-          <div>
+          <div class="wrap-text-area">
             <label class="input-text" for="user-text-area">Comment</label>
             <textarea
               name="user-text-area"
@@ -491,7 +493,7 @@
             ></textarea>
           </div>
 
-          <div class="wrap-iput">
+          <div class="wrap-checkbox">
             <input
               type="checkbox"
               id="policy"
@@ -510,7 +512,9 @@
             >
           </div>
 
-          <button type="submit" class="modal-btn">Send</button>
+          <div class="wrap-btn-modal">
+            <button type="submit" class="modal-btn">Send</button>
+          </div>
         </form>
       </div>
     </div>

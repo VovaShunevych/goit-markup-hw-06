@@ -55,6 +55,19 @@
   --main-modal-icon-close: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --main-border-modal-imput: #4d5ae5;
   --main-modal-input: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --main-modal-close-fill: #ffffff;
+  --main-modal-close-hover-background: #404bbf;
+  --main-modal-close-background: #e7e9fc;
+  --main-modal-background: #fcfcfc;
+  --main-icon-footer-btn-fill: #ffffff;
+  --main-footer-input-color: #e7e9fc;
+  --main-policy-color: #4d5ae5;
+  --main-input-chackbox-background-color: #404bbf;
+  --main-input-chackbox-fill: #f4f4fd;
+  --main-checkbox-label-color: #757575;
+  --main-input-text-color: #8e8f99;
+  --main-fill-modal-icon-fill: #2e2f42;
+  --main-modal-title-color: #2e2f42;
 }
 
 p,
@@ -542,8 +555,12 @@ body {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: transparent;
-  height: 40px;
-  color: #e7e9fc;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  color: var(--main-footer-input-color, #e7e9fc);
+  min-width: 264px;
+  min-height: 40px;
 }
 .footer-btn {
   font-family: inherit;
@@ -575,7 +592,7 @@ body {
   margin-top: 16px;
 }
 .icon-footer-btn {
-  fill: #ffffff;
+  fill: var(--main-icon-footer-btn-fill, #ffffff);
 }
 /* -------------------------Footer----------------------------------------- */
 /* -------------------------Portfolio Section 1----------------------------------------- */
@@ -705,7 +722,7 @@ body {
   transform: translate(-50%, -50%) scale(1);
   width: 408px;
   min-height: 576px;
-  background: #fcfcfc;
+  background: var(--main-modal-background, #fcfcfc);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -719,7 +736,7 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #e7e9fc;
+  background: var(--main-modal-close-background, #e7e9fc);
   border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
@@ -730,7 +747,7 @@ body {
   margin-bottom: 24px;
 }
 .modal-close:is(:hover, :focus) {
-  background: #404bbf;
+  background: var(--main-modal-close-hover-background, #404bbf);
 }
 .icon-close {
   width: 8px;
@@ -738,7 +755,7 @@ body {
   transition: fill var(--main-modal-icon-close);
 }
 .modal-close:is(:hover, :focus) .icon-close {
-  fill: #ffffff;
+  fill: var(--main-modal-close-fill, #ffffff);
 }
 
 .is-hidden {
@@ -752,7 +769,8 @@ body {
   line-height: calc(24 / 16);
   text-align: center;
   letter-spacing: 0.02em;
-  color: #2e2f42;
+  color: var(--main-modal-title-color, #2e2f42);
+  margin-bottom: 16px;
 }
 .modal-form {
 }
@@ -782,19 +800,21 @@ body {
   top: 50%;
   transform: translateY(-50%);
   transition: fill var(--main-modal-input);
-  fill: #2e2f42;
+  fill: var(--main-fill-modal-icon-fill, #2e2f42);
 }
 .input-text {
-  font-weight: 400;
   font-size: 12px;
   line-height: calc(14 / 12);
   letter-spacing: 0.04em;
-  color: #8e8f99;
+  color: var(--main-input-text-color, #8e8f99);
   display: inline-block;
   margin-bottom: 4px;
 }
 .wrap-iput {
   position: relative;
+}
+.wrap-text-area {
+  margin-bottom: 16px;
 }
 .madal-textarea {
   width: 100%;
@@ -815,12 +835,16 @@ body {
 }
 .input-checkbox {
 }
+.wrap-checkbox {
+  position: relative;
+  margin-bottom: 24px;
+}
 .checkbox-label {
   font-weight: 400;
   font-size: 12px;
   line-height: calc(14 / 12);
   letter-spacing: 0.04em;
-  color: #757575;
+  color: var(--main-checkbox-label-color, #757575);
   display: flex;
 }
 .checkbox-label span {
@@ -833,12 +857,16 @@ body {
   align-items: center;
   justify-content: center;
   fill: transparent;
-  margin-bottom: 24px;
 }
 .input-checkbox:checked + .checkbox-label span {
-  background-color: #404bbf;
+  background-color: var(--main-input-chackbox-background-color, #404bbf);
   border: none;
-  fill: #f4f4fd;
+  fill: var(--main-input-chackbox-fill, #f4f4fd);
+}
+.wrap-btn-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .modal-btn {
   font-family: inherit;
@@ -857,18 +885,12 @@ body {
   min-width: 169px;
   min-height: 56px;
   transition: background var(--main-hero-btn-hover-transition);
-  display: block;
-  position: relative;
-  left: 25%;
 }
 .modal-btn:is(:hover, :focus) {
   background: var(--main-hero-btn-hover-background, #404bbf);
 }
 .policy {
-  color: #757575;
-}
-.policy:is(:hover, :focus) {
-  color: #4d5ae5;
+  color: var(--main-policy-color, #4d5ae5);
 }
 
 /* .checkbox-label::before {
